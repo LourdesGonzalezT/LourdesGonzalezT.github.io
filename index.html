@@ -1,1 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>lgtellez</title>
+  <link rel="stylesheet" href="styles/styles.css">
+  <link rel="stylesheet" href="
+  https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css
+  ">
+</head>
+
+<body>
+  <header>
+    <div class="logo"><a href="index.html">Lourdes González Téllez</a></div>
+    <nav class="navbar">
+      <ul class="menu">
+        <li class="item"><a href="index.html"><i class="fa-solid fa-house"></i> Home</i></a></li>
+        <li class="item"><a href="https://lgtellez.000webhostapp.com/" target="_blank"><i class="fa-solid fa-cat"></i> My another domain</a></li>
+        <li class="item"><a href="para-web/examenes/index.html"><i class="fa-solid fa-graduation-cap"></i> Exams</a></li>
+        <li class="item"><a href="#"><i class="fa-solid fa-address-card"></i> Contact</a></li>
+        <li class="item has-submenu">
+          <a tabindex="0"><i class="fa-solid fa-school-circle-xmark"></i>Practical Exercises</a>
+          <ul class="submenu">
+            <li class="subitem"><a href="para-web/ejercicios-html_css/">Html/CSS</a></li>
+            <li class="subitem"><a href="para-web/ejercicios-JavaScript/index.html">JavaScript</a></li>
+            <li class="subitem"><a href="para-web/examenes/index.html">PHP</a></li>
+            <li class="subitem"><a href="para-web/examenes/index.html">Exams</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+    <script src="js/scripts.js"></script>
+    <a href="#" class="burguer" onclick="displayMenu()">
+      <i class="fa-solid fa-bars"></i>
+    </a>
+  </header>
+
+  <script>
+    let menu = document.querySelector(".menu");
+    let burguerButton = document.querySelector(".burguer i");
+
+    function displayMenu() {
+      menu.classList.toggle("active");
+      burguerButton.classList.toggle("fa-circle-xmark")
+    }
+  </script>
+
+
+  <main class="main-index">
+    <section class="section1">
+
+      <h1>my works</h1>
+
+      <div class="sect1-types-practices">
+
+        <article class="practices">
+          <h2 class="title">Exams</h2>
+          <a href="para-web/examenes/index.html"><img class="code-logo" src="images/dna-image.jpg"
+              alt="dna-image"></a>
+        </article>
+
+        <article class="practices">
+          <h2 class="title">practical html/css exercises</h2>
+          <a href="para-web/ejercicios-html_css/index.html"><img class="code-logo" src="images/html-css-image.jpg"
+              alt="html-css-image"></a>
+        </article>
+
+        <article class="practices">
+          <h2 class="title">practical JavaScript exercises</h2>
+          <a href="para-web/ejercicios-JavaScript/index.html"><img class="code-logo" src="images/js-logo.png" alt="js-logo"></a>
+        </article>
+
+        <article class="practices">
+          <h2 class="title">MySQL exercises</h2>
+          <a href="para-web/ejercicios-bbdd/index.html"><img class="code-logo" src="images/dna-image.jpg" alt="dna-image"></a>
+        </article>
+
+        <article class="practices">
+          <h2 class="title">practical php exercises</h2>
+          <a href="para-web/ejerciciosPHP/index.html"><img class="code-logo" src="images/php-logo.svg.png" alt="php-logo"></a>
+        </article>
+
+        <article class="practices">
+          <h2 class="title">Bootstrap</h2>
+          <a href="para-web/ejercicios-bootstrap/index.html"><img class="code-logo" src="images/dna-image.jpg"
+              alt="dna-image"></a>
+        </article>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <footer>
+    <h3>Created by Lourdes González Téllez 2025</h3>
+  </footer>
+
+
+
+</body>
+
+</html>
