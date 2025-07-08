@@ -1,109 +1,288 @@
-/* --- ESTILOS PARA EL HEADER Y NAV  --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Verdana, Tahoma, sans-serif;
+}
 
 header {
-  display: flex; 
-  justify-content: space-between; 
-  align-items: center; 
-  padding: 10px 15px; 
-  background-color: #00352F;
-  width: 100%;
-  height: 8vh;
-  position: fixed;
-   z-index: 1050;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    background-color: #00352F;
+    width: 100%;
+    height: 8vh;
+    position: fixed;
+    z-index: 1050;
 }
 
-.navbar {
-    padding: 0; 
+.menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
 }
 
-.logo a{
-  text-decoration: none;
-  color: #CEDC00;
-}
-
-.nav-link{
+.menu a {
+    text-decoration: none;
     color: #F2F2F2;
 }
 
-.nav-link:hover{
-  color: #CEDC00;
+.menu a:hover {
+    color: #CEDC00;
+    text-decoration: underline;
+}
+
+.logo a {
+    font-weight: bold;
+    text-decoration: none;
+    color: #CEDC00;
+}
+
+.burguer {
+    display: none;
+    color: #00AFB5;
+    /* para que no aparezca en la versión escritorio */
+}
+
+.burguer i {
+    font-size: 35px;
+}
+
+.burguer i.fa-circle-xmark {
+    color: #00AFB5;
+}
+
+@keyframes slideDown {
+    from {
+        top: -100%
+    }
+
+    to {
+        top: 10vh;
+    }
+}
+
+@media all and (max-width:700px) {
+    .menu {
+        display: none;
+    }
+
+    .burguer {
+        display: block;
+    }
+
+    .menu.active {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        padding-top: 5%;
+        height: 40vh;
+        width: 100%;
+        background-color: #00AFB5;
+        position: fixed;
+        margin-top: 8vh;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        animation: slideDown 0.5s;
+    }
+
+    .menu.active a {
+        color: black;
+    }
+
+    .menu.active a:hover {
+        display: flex;
+        justify-content: center;
+        text-decoration: none;
+        color: white;
+        width: 100%;
+    }
 }
 
 /* --- MAIN --- */
 .main-section {
-  display: flex;
-  flex-direction: row; 
-  height: 60vh; 
-  width: 100%;
-  overflow: hidden; 
+    display: flex;
+    flex-direction: row;
+    /* height: 60vh;  */
+    width: 100%;
+    overflow: hidden;
 }
 
 
 .left {
-  background-color: #CEDC00;
-  padding: 50px;
-  color: #00352F;
-  margin-top: 50px;
-  align-items: center;
+    background-color: #CEDC00;
+    padding: 50px;
+    color: #00352F;
+    margin-top: 50px;
+    align-items: center;
+    text-align: center;
 }
 
-.right { 
-  background-color: #00594F;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.right {
+    background-color: #00594F;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 
-.imageLourdes{
-  height: 15vw; 
-  top: 50%;
-  left: 50%;
+.imageLourdes {
+    height: 15vw;
+    top: 50%;
+    left: 50%;
 }
+
 .overlay-image {
-  width: 100%;
-  height: 100%;
-  object-fit: contain; 
-  border-radius: 10px;
-} 
-
-section{
-  height: 50vh;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 10px;
 }
 
-.skills{
-  display: flex;
-  flex-direction: row;
-  background-color: #00352F;
-  color: #CEDC00;
+section {
+    height: 50vh;
 }
 
-.workExperience{
-  background-color: #00594F;
-  height: auto;
-  color: #CEDC00;
+.skills {
+    display: flex;
+    flex-direction: row;
+    background-color: #00352F;
+    color: #CEDC00;
 }
+
+.workExperience {
+    background-color: #00594F;
+    height: auto;
+    color: #CEDC00;
+}
+
 .card {
-  box-shadow: 0 0 15px rgba(0,0,0,0.1);
-  border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
 }
 
 .card-title {
-  color: #00352F;
-  font-weight: bold;
+    color: #00352F;
+    font-weight: bold;
 }
 
 .card ul {
-  padding-left: 1rem;
-}
-.educationalTraining{
-  background-color: #CEDC00;
-  color: #00352F;
+    padding-left: 1rem;
 }
 
-footer{
-  text-align: center;
-  background-color: #00352F;  
-  color: #CEDC00;
-  padding: 1% 0%;
+.educationalTraining {
+    background-color: #CEDC00;
+    color: #00352F;
+}
+
+footer {
+    text-align: center;
+    background-color: #00352F;
+    color: #CEDC00;
+    padding: 1% 0%;
+}
+
+
+/* --- MEDIA QUERIES PARA RESPONSIVIDAD --- */
+
+/* Pantallas pequeñas (menos de 768px) */
+@media (max-width: 767.98px) {
+    .logo a {
+        font-size: 1.2rem;
+    }
+
+    /* MAIN SECTION */
+    .main-section {
+        flex-direction: column;
+        height: auto;
+        min-height: 80vh;
+    }
+
+    .container.left,
+    .container.right {
+        width: 100%;
+        height: auto;
+        padding: 30px;
+    }
+
+    .container.left {
+        padding-top: calc(30px + 8vh);
+    }
+
+    .imageLourdes {
+        width: 50%;
+        height: auto;
+        max-width: 200px;
+        max-height: 200px;
+        margin: 20px auto;
+    }
+
+    /* SECCIONES*/
+    section {
+    height: auto;
+}
+    .skills .col-md-4,
+    .workExperience .col-md-4,
+    .educationalTraining .col-md-4 {
+        margin-bottom: 20px;
+    }
+
+    .skills .col-md-4:last-child,
+    .workExperience .col-md-4:last-child,
+    .educationalTraining .col-md-4:last-child {
+        margin-bottom: 0;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    .skills h2,
+    .educationalTraining h2 {
+        text-align: center;
+    }
+}
+
+/* Pantallas medianas (entre 768px y 991.98px, tablets) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .main-section {
+        height: 50vh;
+    }
+
+    .container.left,
+    .container.right {
+        padding: 40px;
+    }
+
+    .imageLourdes {
+        width: 40%;
+        max-width: 200px;
+        max-height: 200px;
+    }
+
+    h2 {
+        font-size: 2.2rem;
+    }
+}
+
+/* Pantallas grandes (más de 992px, desktops) */
+@media (min-width: 992px) {
+    .main-section {
+        flex-direction: row;
+        height: 60vh;
+    }
+
+    .container.left,
+    .container.right {
+        width: 50%;
+    }
+
+    .imageLourdes {
+        width: 60%;
+        max-width: 250px;
+        max-height: 250px;
+    }
 }
